@@ -25,6 +25,65 @@ Flujo dle el programa:
 | `Presupuesto` | Suma todos los gastos y calcula el monto mensual a apartar |
 
 ---
+## Diagrama UML
+
+```mermaid
+classDiagram
+    class Mascota {
+        - nombre : string
+        - edadMeses : int
+        - padecimientos : vector~string~
+        - esCachorro : bool
+        + agregarPadecimiento()
+        + calcularGastoMensual() float
+    }
+
+    class Perro {
+        - razaCanina : string
+        - vacunasAplicadas : vector~Vacuna~
+        - gastos : vector~Gasto~
+        + cargarEsquemaVacunacion()
+        + marcarVacunaAplicada()
+        + agregarGasto()
+    }
+
+    class Gato {
+        - positivoLeucemia : bool
+        - vacunasAplicadas : vector~Vacuna~
+        - gastos : vector~Gasto~
+        + cargarEsquemaVacunacion()
+        + marcarVacunaAplicada()
+        + agregarGasto()
+    }
+
+    class Vacuna {
+        - nombre : string
+        - precio : float
+        - frecuencia : string
+    }
+
+    class Gasto {
+        - descripcion : string
+        - precio : float
+        - frecuencia : string
+    }
+
+    class Presupuesto {
+        - mascotas : vector~Mascota*~
+        + agregarMascota()
+        + calcularTotalMensual() float
+        + mostrarResumen()
+    }
+
+    Mascota <|-- Perro : hereda
+    Mascota <|-- Gato : hereda
+    Perro *-- Vacuna : tiene
+    Perro *-- Gasto : tiene
+    Gato *-- Vacuna : tiene
+    Gato *-- Gasto : tiene
+    Presupuesto o-- Mascota : gestiona
+```
+---
 ## Referencias a revizar para cargar protocolos de desparasitación y vacunación
 - BBVA México. (2024). *Guía práctica para saber cuánto cuesta tener un perro*. https://www.bbva.mx/educacion-financiera/banca-digital/cuenta-digital-cuanto-cuesta-tener-perro.html
 - Cronista México. (2025). *Llega SimiPet Care: estos son los costos de los servicios para perros y gatos*. https://www.cronista.com/mexico/actualidad-mx/llega-simipet-care-estos-son-los-costos-de-las-consultas-vacunas-y-otros-servicios-para-perros-y-gatos/
