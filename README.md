@@ -181,7 +181,7 @@ classDiagram
 
 Los esquemas están basados en recomendaciones de la WSAVA y precios de referencia de clínicas veterinarias en México (2025).
 
-### 🐶 Perros
+### Perros
 
 **Esquema inicial cachorro (gasto único):**
 
@@ -202,7 +202,7 @@ Los esquemas están basados en recomendaciones de la WSAVA y precios de referenc
 | Desparasitación | $100 c/3 meses | $33.33/mes |
 | **Total ahorro** | | **$91.67/mes** |
 
-### 🐱 Gatos
+### Gatos
 
 **Esquema inicial cachorro (gasto único):**
 
