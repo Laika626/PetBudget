@@ -41,14 +41,20 @@ public:
     */
     string get_descripcion() { return descripcion; }
     double get_precio()      { return precio; }
+    string get_frecuencia() { return frecuencia; }
 
     /**
      * calcularAporteMensual: metodo que divide el precio entre 12 si el gasto es anual,
      * retorna el precio (aporte que se debe hacer mensual) en una variable tipo double
      */
     double calcularAporteMensual() {
-        if (frecuencia == "anual") return precio / 12.0;
+        if (frecuencia == "anual")      return precio / 12.0;
+        if (frecuencia == "trimestral") return precio / 3.0;
         return precio;
+    }
+
+    bool esMensual() {
+        return frecuencia == "mensual";
     }
 
     /**
