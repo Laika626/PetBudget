@@ -1,11 +1,11 @@
 /*
 *
-* PetBudget
-* Fernanda Jiménez Estrada
-* A01206671
-* 09/06/2026
-* Esta clase define el objeto Vacuna con nombre, precio, frecuencia
-* y si ya fue aplicada.
+•⁠  ⁠PetBudget
+•⁠  ⁠Fernanda Jiménez Estrada
+•⁠  ⁠A01206671
+•⁠  ⁠09/06/2026
+•⁠  ⁠Esta clase define el objeto Vacuna con nombre, precio, frecuencia
+•⁠  ⁠y si ya fue aplicada.
 */
 
 #ifndef VACUNA_H_
@@ -16,22 +16,22 @@
 
 using namespace std;
 
-//Declaracion de clase Vacuna
+// Declaracion de clase Vacuna
 class Vacuna {
-
-    //Declaro variables de instancia privadas
+    // Declaro variables de instancia privadas
 private:
     string nombre;
     double precio;
-    string frecuencia; // "mensual", "trimestral", "anual" o "unico"
+    string frecuencia;  // "mensual", "trimestral", "anual" o "unico"
     bool aplicada;
 
-    //Declaro metodos publicos
+    // Declaro metodos publicos
 public:
-    Vacuna(): nombre(""), precio(0), frecuencia(""), aplicada(false) {}; //constructor por default
+    // constructor por default
+    Vacuna(): nombre(""), precio(0), frecuencia(""), aplicada(false) {}
 
     Vacuna(string nom, double prec, string frec):
-        nombre(nom), precio(prec), frecuencia(frec), aplicada(false) {};
+        nombre(nom), precio(prec), frecuencia(frec), aplicada(false) {}
 
     string get_nombre()  { return nombre; }
     double get_precio()  { return precio; }
@@ -75,6 +75,6 @@ string Vacuna::to_string() {
 }
 
 /**
-* endif: cierre de ifndef
+•⁠  ⁠endif: cierre de ifndef
 */
-#endif // VACUNA_H_
+#endif  // VACUNA_H_

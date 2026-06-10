@@ -1,11 +1,11 @@
 /*
 *
-* PetBudget
-* Fernanda Jiménez Estrada
-* A01206671
-* 09/06/2026
-* Esta clase define el objeto Presupuesto que gestiona todas las mascotas
-* y calcula el total mensual usando polimorfismo.
+•⁠  ⁠PetBudget
+•⁠  ⁠Fernanda Jiménez Estrada
+•⁠  ⁠A01206671
+•⁠  ⁠09/06/2026
+•⁠  ⁠Esta clase define el objeto Presupuesto que gestiona todas las mascotas
+•⁠  ⁠y calcula el total mensual usando polimorfismo.
 */
 
 #ifndef PRESUPUESTO_H_
@@ -20,17 +20,16 @@ using namespace std;
 
 const int MAX = 100;
 
-//Declaracion de clase Presupuesto
+// Declaracion de clase Presupuesto
 class Presupuesto {
-
-//Variables de instancia privadas del objeto
-private:
-    Mascota* mascotas[MAX]; //arreglo de apuntadores para usar polimorfismo
+// Variables de instancia privadas del objeto
+ private:
+    Mascota* mascotas[MAX];  // arreglo de apuntadores para usar polimorfismo
     int numMascotas;
 
-//Metodos publicos del objeto
-public:
-    Presupuesto(): numMascotas(0) {}; //constructor por default
+// Metodos publicos del objeto
+ public:
+    Presupuesto(): numMascotas(0) {}  // constructor por default
 
     void agregarMascota(Perro* perro);
     void agregarMascota(Gato* gato);
@@ -136,4 +135,4 @@ void Presupuesto::mostrarDesglose() {
 /**
  * endif: cierre de ifndef
  */
-#endif // PRESUPUESTO_H_
+#endif  // PRESUPUESTO_H_

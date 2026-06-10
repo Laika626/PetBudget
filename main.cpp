@@ -1,22 +1,23 @@
 /*
 *
-* PetBudget
-* Fernanda Jiménez Estrada
-* A01206671
-* 09/06/2026
-* Programa principal con menú interactivo para registrar mascotas
-* y calcular el presupuesto mensual veterinario.
-* Compilar: g++ mascota.h vacuna.h gasto.h perro.h gato.h presupuesto.h main.cpp
+•⁠  ⁠PetBudget
+•⁠  ⁠Fernanda Jiménez Estrada
+•⁠  ⁠A01206671
+•⁠  ⁠09/06/2026
+•⁠  ⁠Programa principal con menú interactivo para registrar mascotas
+•⁠  ⁠y calcular el presupuesto mensual veterinario.
+•⁠  ⁠Compilar: g++ mascota.h vacuna.h gasto.h perro.h gato.h presupuesto.h main.cpp
 */
 
 #include <iostream>
 #include "presupuesto.h"
+#include <string>
 
 using namespace std;
 
-//Sobrecarga: menu de gastos extra para Perro
+// Sobrecarga: menu de gastos extra para Perro
 void menuGastosExtra(Perro* perro);
-//Sobrecarga: menu de gastos extra para Gato
+// Sobrecarga: menu de gastos extra para Gato
 void menuGastosExtra(Gato* gato);
 
 /**
@@ -72,7 +73,7 @@ void menuGastosExtra(Gato* gato) {
 }
 
 int main() {
-    Presupuesto presupuesto; //se crea vacio, sin mascotas
+    Presupuesto presupuesto;  // se crea vacio, sin mascotas
     int opcion;
 
     do {
@@ -94,13 +95,13 @@ int main() {
             cout << "Edad en meses: ";      cin >> edad;
             cout << "Raza: ";               cin >> raza;
 
-            //crear el perro con new — devuelve un apuntador Perro*
-            //el constructor llama automaticamente cargarEsquemaVacunacion()
+            // crear el perro con new — devuelve un apuntador Perro*
+            // el constructor llama automaticamente cargarEsquemaVacunacion()
             Perro* perro = new Perro(nombre, edad, raza);
 
-            menuGastosExtra(perro); //agregar gastos extra manuales
+            menuGastosExtra(perro);  // agregar gastos extra manuales
 
-            //guardar como Mascota* en el arreglo — aqui entra el polimorfismo
+            // guardar como Mascota* en el arreglo — aqui entra el polimorfismo
             presupuesto.agregarMascota(perro);
             cout << "\nPerro agregado correctamente.\n";
 
@@ -114,34 +115,33 @@ int main() {
             cout << "Edad en meses: ";                      cin >> edad;
             cout << "Positivo a leucemia felina? (s/n): ";  cin >> leucemia;
 
-            //convertir la respuesta s/n a bool
+            // convertir la respuesta s/n a bool
             if (leucemia == 's' || leucemia == 'S')
                 positivoLeucemia = true;
 
-            //crear el gato con new — devuelve un apuntador Gato*
-            //el constructor llama automaticamente cargarEsquemaVacunacion()
+            // crear el gato con new — devuelve un apuntador Gato*
+            // el constructor llama automaticamente cargarEsquemaVacunacion()
             Gato* gato = new Gato(nombre, edad, positivoLeucemia);
 
-            menuGastosExtra(gato); //agregar gastos extra manuales
+            menuGastosExtra(gato);  // agregar gastos extra manuales
 
-            //guardar como Mascota* en el arreglo — aqui entra el polimorfismo
+            // guardar como Mascota* en el arreglo — aqui entra el polimorfismo
             presupuesto.agregarMascota(gato);
             cout << "\nGato agregado correctamente.\n";
 
         } else if (opcion == 3) {
-            //muestra resumen separando ahorro mensual y gastos fijos
+            // muestra resumen separando ahorro mensual y gastos fijos
             presupuesto.mostrarResumen();
 
         } else if (opcion == 4) {
-            //muestra desglose completo por vacuna y gasto
+            // muestra desglose completo por vacuna y gasto
             presupuesto.mostrarDesglose();
 
         } else if (opcion != 5) {
             cout << "Opcion invalida.\n";
         }
-
-    } while (opcion != 5); //el programa corre hasta que el usuario elija salir
-
-    cout << "\nHasta luego!\n";
+    // el programa corre hasta que el usuario elija salir
+    } while (opcion != 5);
+        cout << "\nHasta luego!\n";
     return 0;
 }

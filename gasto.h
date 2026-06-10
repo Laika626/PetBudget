@@ -1,5 +1,5 @@
 /*
- * PetBudget - gasto.h
+* PetBudget - gasto.h
  * Fernanda Jiménez Estrada
  * Clase Gasto para medicamentos y gastos extra agregados manualmente
  */
@@ -22,20 +22,20 @@ class Gasto {
 private:
     string descripcion;
     double precio;
-    string frecuencia; // "mensual" o "anual"
+    string frecuencia;   // "mensual" o "anual"
 
 public:
     /**
      * Constructor por defecto
-     * Gasto(): descripcion(""), precio(0), frecuencia("") {};
+     * Gasto(): descripcion(""), precio(0), frecuencia("") {}
      */
-    Gasto(): descripcion(""), precio(0), frecuencia("") {};
+    Gasto(): descripcion(""), precio(0), frecuencia("") {}
 
     /**
      * Constructor con parametros
      */
     Gasto(string desc, double prec, string frec):
-        descripcion(desc), precio(prec), frecuencia(frec) {};
+        descripcion(desc), precio(prec), frecuencia(frec) {}
     /**
     * Getters de gasto
     */
@@ -71,4 +71,4 @@ public:
 /**
  * endif: cierre de ifndef
  */
-#endif // GASTO_H_
+#endif   // GASTO_H_

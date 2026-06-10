@@ -1,11 +1,11 @@
 /*
 *
-* PetBudget
-* Fernanda Jiménez Estrada
-* A01206671
-* 09/06/2026
-* Esta clase define el objeto abstracto Mascota que contiene las clases heredadas
-* Perro y Gato.
+•⁠  ⁠PetBudget
+•⁠  ⁠Fernanda Jiménez Estrada
+•⁠  ⁠A01206671
+•⁠  ⁠09/06/2026
+•⁠  ⁠Esta clase define el objeto abstracto Mascota que contiene las clases heredadas
+•⁠  ⁠Perro y Gato.
 */
 
 #ifndef MASCOTA_H_
@@ -16,10 +16,9 @@
 
 using namespace std;
 
-//Declaracion de clase Mascota que es abstracta
+// Declaracion de clase Mascota que es abstracta
 class Mascota {
-
-    //Declaro variables de instancia
+    // Declaro variables de instancia
 protected:
     string nombre;
     int edadMeses;
@@ -28,15 +27,15 @@ protected:
     bool esCachorro;
     string tipo;
 
-    //Declaro los métodos que va a tener el objeto
+    // Declaro los métodos que va a tener el objeto
 public:
     Mascota(): nombre(""), edadMeses(0), numPadecimientos(0),
-               esCachorro(false), tipo("") {}; //constructor por default
+               esCachorro(false), tipo("") {}  // constructor por default
 
     Mascota(string nom, int edad, string tip):
         nombre(nom), edadMeses(edad), numPadecimientos(0), tipo(tip) {
         esCachorro = (edad < 12);
-    };
+    }
 
     string get_nombre()   { return nombre; }
     string get_tipo()     { return tipo; }
@@ -49,16 +48,16 @@ public:
             numPadecimientos++;
         }
     }
-
-    virtual double calcularGastosFijos() = 0;    //método abstracto será sobreescrito
-    virtual double calcularAhorroMensual() = 0;  //método abstracto será sobreescrito
-    virtual double calcularGastoMensual() = 0;   //método abstracto será sobreescrito
-    virtual double calcularEsquemaInicial() = 0; //método abstracto será sobreescrito
-    virtual string to_string() = 0;              //método abstracto será sobreescrito
-    virtual string toStringDesglose() = 0;       //método abstracto será sobreescrito
+    // métodos abstractos será sobreescritos
+    virtual double calcularGastosFijos() = 0;
+    virtual double calcularAhorroMensual() = 0;
+    virtual double calcularGastoMensual() = 0;
+    virtual double calcularEsquemaInicial() = 0;
+    virtual string to_string() = 0;
+    virtual string toStringDesglose() = 0;
 };
 
 /**
  * endif: cierre de ifndef
  */
-#endif // MASCOTA_H_
+#endif  // MASCOTA_H_

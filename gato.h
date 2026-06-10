@@ -1,12 +1,12 @@
 /*
 *
-* PetBudget
-* Fernanda Jiménez Estrada
-* A01206671
-* 09/06/2026
-* Esta clase define el objeto Gato que hereda de Mascota.
-* Maneja el esquema de vacunación felino según la edad
-* y el resultado del test de leucemia felina.
+•⁠  ⁠PetBudget
+•⁠  ⁠Fernanda Jiménez Estrada
+•⁠  ⁠A01206671
+•⁠  ⁠09/06/2026
+•⁠  ⁠Esta clase define el objeto Gato que hereda de Mascota.
+•⁠  ⁠Maneja el esquema de vacunación felino según la edad
+•⁠  ⁠y el resultado del test de leucemia felina.
 */
 
 #ifndef GATO_H_
@@ -21,11 +21,10 @@
 
 using namespace std;
 
-//Declaro objeto Gato que hereda de Mascota
+// Declaro objeto Gato que hereda de Mascota
 class Gato: public Mascota {
-
-//Variables de instancia privadas del objeto
-private:
+// Variables de instancia privadas del objeto
+ private:
     bool positivoLeucemia;
     Vacuna vacunasInicial[10];
     int numVacunasInicial;
@@ -35,16 +34,17 @@ private:
     int numGastos;
     Gasto desparasitacion;
 
-//Metodos publicos del objeto
-public:
+// Metodos publicos del objeto
+ public:
+    // constructor por default
     Gato(): Mascota("", 0, "gato"), positivoLeucemia(false),
-            numVacunasInicial(0), numVacunasAdulto(0), numGastos(0) {}; //constructor por default
+            numVacunasInicial(0), numVacunasAdulto(0), numGastos(0) {}
 
     Gato(string nom, int edad, bool leucemia):
         Mascota(nom, edad, "gato"), positivoLeucemia(leucemia),
         numVacunasInicial(0), numVacunasAdulto(0), numGastos(0) {
         cargarEsquemaVacunacion();
-    };
+    }
 
     bool get_positivoLeucemia() { return positivoLeucemia; }
 
@@ -69,7 +69,7 @@ public:
  * @return
  */
 void Gato::cargarEsquemaVacunacion() {
-    //esquema de adulto siempre se carga para calcular ahorro mensual
+    // esquema de adulto siempre se carga para calcular ahorro mensual
     vacunasAdulto[0] = Vacuna("Trivalente Felina", 350, "anual");
     vacunasAdulto[1] = Vacuna("Rabia", 200, "anual");
     numVacunasAdulto = 2;
@@ -78,10 +78,10 @@ void Gato::cargarEsquemaVacunacion() {
         numVacunasAdulto = 3;
     }
 
-    //desparasitacion trimestral
+    // desparasitacion trimestral
     desparasitacion = Gasto("Desparasitacion", 100, "trimestral");
 
-    //esquema inicial solo para cachorros
+    // esquema inicial solo para cachorros
     if (esCachorro) {
         vacunasInicial[0] = Vacuna("Trivalente Felina", 350, "unico");
         vacunasInicial[1] = Vacuna("Refuerzo Trivalente", 350, "unico");
@@ -90,7 +90,8 @@ void Gato::cargarEsquemaVacunacion() {
         numVacunasInicial = 4;
         if (!positivoLeucemia) {
             vacunasInicial[4] = Vacuna("Leucemia Felina", 400, "unico");
-            vacunasInicial[5] = Vacuna("Refuerzo Leucemia Felina", 400, "unico");
+            vacunasInicial[5] = Vacuna("Refuerzo Leucemia Felina",
+                400, "unico");
             numVacunasInicial = 6;
         }
     }
@@ -173,20 +174,22 @@ string Gato::to_string() {
     stringstream aux;
     aux << nombre << " (Gato " << (esCachorro ? "cachorro" : "adulto") << ")\n";
     if (esCachorro)
-        aux << "  Esquema inicial (gasto unico): $" << calcularEsquemaInicial() << "\n";
+        aux << "  Esquema inicial (gasto unico): $"
+        << calcularEsquemaInicial() << "\n";
     aux << "  Ahorro mensual:        $" << calcularAhorroMensual() << "/mes\n";
     aux << "  Gastos fijos:          $" << calcularGastosFijos() << "/mes\n";
     aux << "  Total a apartar:       $" << calcularGastoMensual() << "/mes\n";
     if (esCachorro) {
-        aux << "  Nota: el esquema inicial es un gasto unico que debes cubrir\n";
-        aux << "  de inmediato y no esta incluido en el presupuesto mensual.\n";
-        aux << "  El ahorro mensual esta calculado para que cuando tu mascota\n";
-        aux << "  cumpla 12 meses tengas cubierto su primer esquema de adulto.\n";
+        aux << "  Nota: Esquema inicial es un gasto unico que debes cubrir\n";
+        aux << "  inmediatamente, no es parte del presupuesto mensual.\n";
+        aux << "  El ahorro mensual esta calculado para que cuando tu\n";
+        aux << "  mascota cumpla 12 meses tengas cubierto su primer \n";
+        aux << "  esquema de adulto.\n";
     } else {
-        aux << "  Nota: este presupuesto asume que tu mascota acaba de recibir\n";
-        aux << "  sus vacunas y desparasitacion. Tienes aproximadamente 12 meses\n";
-        aux << "  para ahorrar para las proximas vacunas y 3 meses para la\n";
-        aux << "  siguiente desparasitacion.\n";
+        aux << "  Nota: este presupuesto asume que tu mascota acaba de\n";
+        aux << "  recibir sus vacunas y desparacitacion. Tienes\n";
+        aux << "  aproximadamete 12 meses para ahorrar para las proximas\n";
+        aux << "  vacunasy 3 mesespara la siguiente desparacitacion\n";
     }
     return aux.str();
 }
@@ -210,7 +213,8 @@ string Gato::toStringDesglose() {
                 << "  $" << vacunasInicial[i].get_precio() << "\n";
         if (!positivoLeucemia)
             aux << "    *Leucemia Felina solo si resultado es negativo\n";
-        aux << "    Total esquema inicial: $" << calcularEsquemaInicial() << "\n\n";
+        aux << "    Total esquema inicial: $"
+        << calcularEsquemaInicial() << "\n\n";
     }
     aux << "  Ahorro mensual (para esquema de adulto):\n";
     for (int i = 0; i < numVacunasAdulto; i++)
@@ -226,23 +230,27 @@ string Gato::toStringDesglose() {
         for (int i = 0; i < numGastos; i++)
             aux << "    " << gastos[i].to_string();
     }
-    aux << "    Total fijos: $" << calcularGastosFijos() << "/mes\n\n";
+    aux << "    Total fijos: $"
+    << calcularGastosFijos() << "/mes\n\n";
     if (esCachorro) {
-        aux << "  Nota: el esquema inicial es un gasto unico que debes cubrir\n";
-        aux << "  de inmediato y no esta incluido en el presupuesto mensual.\n";
-        aux << "  El ahorro mensual esta calculado para que cuando tu mascota\n";
-        aux << "  cumpla 12 meses tengas cubierto su primer esquema de adulto.\n\n";
+        aux << "  Nota: el esquema inicial es un gasto unico\n";
+        aux << "  que debes cubrir de inmediato y no esta\n";
+        aux << "  incluido en el presupuesto mensual. El ahorro\n";
+        aux << "  mensual esta calculado para que cuando tu mascota\n";
+        aux << "  cumpla 12 meses tengas cubierto su primer esquema\n";
+        aux << "  esquema de adulto.\n\n";
     } else {
-        aux << "  Nota: este presupuesto asume que tu mascota acaba de recibir\n";
-        aux << "  sus vacunas y desparasitacion. Tienes aproximadamente 12 meses\n";
-        aux << "  para ahorrar para las proximas vacunas y 3 meses para la\n";
-        aux << "  siguiente desparasitacion.\n\n";
+        aux << "  Nota: este presupuesto asume que tu mascota acaba\n";
+        aux << "  de recibirsus vacunas y desparasitacion. Tienes\n";
+        aux << "  aproximadamente 12 meses para ahorrar para las proximas\n";
+        aux << "  vacunas y 3 meses para la siguiente desparasitacion.\n\n";
     }
-    aux << "  Total a apartar mensualmente: $" << calcularGastoMensual() << "/mes\n";
+    aux << "  Total a apartar mensualmente: $"
+    << calcularGastoMensual() << "/mes\n";
     return aux.str();
 }
 
 /**
  * endif: cierre de ifndef
  */
-#endif // GATO_H_
+#endif  // GATO_H_
