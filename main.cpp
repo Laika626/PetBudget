@@ -1,11 +1,16 @@
-/**
- * menuGastosExtra permite agregar gastos extra manuales al gato.
+/*
+ * Proyecto PetBudget
+ * Fernanda Jiménez Estrada
+ * A01206671
+ * 09/06/2026
  *
- * Sobrecarga para recibir un apuntador a Gato.
- * Sigue pidiendo gastos hasta que el usuario elija terminar.
+ * Archivo: main.cpp
  *
- * @param gato apuntador al objeto Gato al que se le agregan gastos.
- * @return
+ * Programa principal con menu interactivo para registrar mascotas,
+ * agregar gastos extra y calcular el presupuesto mensual veterinario.
+ *
+ * Compilar:
+ * g++ main.cpp -std=c++17 -o PetBudget
  */
 
 #include <iostream>
