@@ -26,12 +26,12 @@ class Gasto {
     /**
      * Los atributos son privados porque ninguna clase o sub-clase necesita acceder directamente a ellos
      */
-private:
+ private:
     string descripcion;
     double precio;
     string frecuencia;   // "mensual" o "anual"
 
-public:
+ public:
     /**
      * Constructor por defecto
      * Gasto(): descripcion(""), precio(0), frecuencia("") {}

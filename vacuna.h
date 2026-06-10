@@ -21,14 +21,14 @@ using namespace std;
 // Declaracion de clase Vacuna
 class Vacuna {
     // Declaro variables de instancia privadas
-private:
+ private:
     string nombre;
     double precio;
     string frecuencia;  // "mensual", "trimestral", "anual" o "unico"
     bool aplicada;
 
     // Declaro metodos publicos
-public:
+ public:
     // constructor por default
     Vacuna(): nombre(""), precio(0), frecuencia(""), aplicada(false) {}
 

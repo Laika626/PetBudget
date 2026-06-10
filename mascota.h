@@ -22,7 +22,7 @@ using namespace std;
 // Declaracion de clase Mascota que es abstracta
 class Mascota {
     // Declaro variables de instancia
-protected:
+ protected:
     string nombre;
     int edadMeses;
     string padecimientos[10];
@@ -31,7 +31,7 @@ protected:
     string tipo;
 
     // Declaro los métodos que va a tener el objeto
-public:
+ public:
     Mascota(): nombre(""), edadMeses(0), numPadecimientos(0),
                esCachorro(false), tipo("") {}  // constructor por default
 
