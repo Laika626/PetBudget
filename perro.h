@@ -233,9 +233,9 @@ string Perro::toStringDesglose() {
         aux << "  esquema de adulto.\n";
     } else {
         aux << "  Nota: este presupuesto asume que tu mascota acaba de\n";
-        aux << "  recibir sus vacunas y desparacitacion. Tienes\n";
+        aux << "  recibir sus vacunas y desparasitacion. Tienes\n";
         aux << "  aproximadamente 12 meses para ahorrar para las proximas\n";
-        aux << "  vacunasy 3 meses para la siguiente desparasitacion\n";
+        aux << "  vacunas y 3 meses para la siguiente desparasitacion\n";
     }
     aux << "  Total a apartar mensualmente: $"
     << calcularGastoMensual() << "/mes\n";

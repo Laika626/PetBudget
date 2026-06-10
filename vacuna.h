@@ -77,6 +77,6 @@ string Vacuna::to_string() {
 }
 
 /**
-•⁠  ⁠endif: cierre de ifndef
-*/
+ * endif: cierre de ifndef
+ */
 #endif  // VACUNA_H_
