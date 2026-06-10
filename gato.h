@@ -1,13 +1,15 @@
 /*
-*
-•⁠  ⁠PetBudget
-•⁠  ⁠Fernanda Jiménez Estrada
-•⁠  ⁠A01206671
-•⁠  ⁠09/06/2026
-•⁠  ⁠Esta clase define el objeto Gato que hereda de Mascota.
-•⁠  ⁠Maneja el esquema de vacunación felino según la edad
-•⁠  ⁠y el resultado del test de leucemia felina.
-*/
+ * Proyecto PetBudget
+ * Fernanda Jiménez Estrada
+ * A01206671
+ * 09/06/2026
+ *
+ * Archivo: gato.h
+ *
+ * Esta clase define el objeto Gato, que hereda de Mascota.
+ * Maneja el esquema de vacunacion felino de acuerdo con la edad
+ * de la mascota y el resultado del test de leucemia felina.
+ */
 
 #ifndef GATO_H_
 #define GATO_H_
@@ -241,7 +243,7 @@ string Gato::toStringDesglose() {
         aux << "  esquema de adulto.\n\n";
     } else {
         aux << "  Nota: este presupuesto asume que tu mascota acaba\n";
-        aux << "  de recibirsus vacunas y desparasitacion. Tienes\n";
+        aux << "  de recibir sus vacunas y desparasitacion. Tienes\n";
         aux << "  aproximadamente 12 meses para ahorrar para las proximas\n";
         aux << "  vacunas y 3 meses para la siguiente desparasitacion.\n\n";
     }

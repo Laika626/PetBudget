@@ -1,12 +1,15 @@
 /*
-*
-•⁠  ⁠PetBudget
-•⁠  ⁠Fernanda Jiménez Estrada
-•⁠  ⁠A01206671
-•⁠  ⁠09/06/2026
-•⁠  ⁠Esta clase define el objeto abstracto Mascota que contiene las clases heredadas
-•⁠  ⁠Perro y Gato.
-*/
+ * Proyecto PetBudget
+ * Fernanda Jiménez Estrada
+ * A01206671
+ * 09/06/2026
+ *
+ * Archivo: mascota.h
+ *
+ * Esta clase define el objeto abstracto Mascota, que contiene
+ * los atributos generales de una mascota y los metodos que deben
+ * implementar las clases heredadas Perro y Gato.
+ */
 
 #ifndef MASCOTA_H_
 #define MASCOTA_H_
@@ -48,7 +51,7 @@ public:
             numPadecimientos++;
         }
     }
-    // métodos abstractos será sobreescritos
+    // Metodos abstractos que seran sobreescritos en las clases hijas
     virtual double calcularGastosFijos() = 0;
     virtual double calcularAhorroMensual() = 0;
     virtual double calcularGastoMensual() = 0;

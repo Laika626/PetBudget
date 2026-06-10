@@ -1,13 +1,12 @@
-/*
-*
-•⁠  ⁠PetBudget
-•⁠  ⁠Fernanda Jiménez Estrada
-•⁠  ⁠A01206671
-•⁠  ⁠09/06/2026
-•⁠  ⁠Programa principal con menú interactivo para registrar mascotas
-•⁠  ⁠y calcular el presupuesto mensual veterinario.
-•⁠  ⁠Compilar: g++ mascota.h vacuna.h gasto.h perro.h gato.h presupuesto.h main.cpp
-*/
+/**
+ * menuGastosExtra permite agregar gastos extra manuales al gato.
+ *
+ * Sobrecarga para recibir un apuntador a Gato.
+ * Sigue pidiendo gastos hasta que el usuario elija terminar.
+ *
+ * @param gato apuntador al objeto Gato al que se le agregan gastos.
+ * @return
+ */
 
 #include <iostream>
 #include "presupuesto.h"

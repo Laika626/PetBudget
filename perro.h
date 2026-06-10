@@ -1,12 +1,15 @@
 /*
-*
-•⁠  ⁠PetBudget
-•⁠  ⁠Fernanda Jiménez Estrada
-•⁠  ⁠A01206671
-•⁠  ⁠09/06/2026
-•⁠  ⁠Esta clase define el objeto Perro que hereda de Mascota.
-•⁠  ⁠Maneja el esquema de vacunación canino según la edad de la mascota.
-*/
+ * Proyecto PetBudget
+ * Fernanda Jiménez Estrada
+ * A01206671
+ * 09/06/2026
+ *
+ * Archivo: perro.h
+ *
+ * Esta clase define el objeto Perro, que hereda de Mascota.
+ * Maneja el esquema de vacunacion canino de acuerdo con la edad
+ * de la mascota y calcula sus gastos mensuales.
+ */
 
 #ifndef PERRO_H_
 #define PERRO_H_
@@ -181,7 +184,7 @@ string Perro::to_string() {
         aux << "  Nota: este presupuesto asume que tu mascota acaba de\n";
         aux << "  recibir sus vacunas y desparacitacion. Tienes\n";
         aux << "  aproximadamete 12 meses para ahorrar para las proximas\n";
-        aux << "  vacunasy 3 mesespara la siguiente desparacitacion\n";
+        aux << "  vacunas y 3 meses para la siguiente desparacitacion\n";
     }
     return aux.str();
 }

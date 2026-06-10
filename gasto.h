@@ -1,7 +1,14 @@
 /*
-* PetBudget - gasto.h
+* Proyecto PetBudget
  * Fernanda Jiménez Estrada
- * Clase Gasto para medicamentos y gastos extra agregados manualmente
+ * A01206671
+ * 09/06/2026
+ *
+ * Archivo: gasto.h
+ *
+ * Esta clase define el objeto Gasto, que guarda la descripcion,
+ * precio y frecuencia de un gasto extra o medicamento agregado
+ * manualmente por el usuario.
  */
 
 /**
@@ -58,9 +65,13 @@ public:
     }
 
     /**
-     * to_string: metodo que convierte los atributos a string
-     * retorna el string con la informacion de la vacuna, para tomar la informacion mas directa (cout)
-     */
+    * to_string convierte los atributos a string.
+    *
+    * Concatena la informacion del gasto para poder imprimirla.
+    *
+    * @param
+    * @return string con los valores y texto concatenado.
+    */
     string to_string() {
         stringstream aux;
         aux << descripcion << " $" << precio << " (" << frecuencia << ")\n";

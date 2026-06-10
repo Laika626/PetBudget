@@ -1,12 +1,14 @@
 /*
-*
-•⁠  ⁠PetBudget
-•⁠  ⁠Fernanda Jiménez Estrada
-•⁠  ⁠A01206671
-•⁠  ⁠09/06/2026
-•⁠  ⁠Esta clase define el objeto Vacuna con nombre, precio, frecuencia
-•⁠  ⁠y si ya fue aplicada.
-*/
+ * Proyecto PetBudget
+ * Fernanda Jiménez Estrada
+ * A01206671
+ * 09/06/2026
+ *
+ * Archivo: vacuna.h
+ *
+ * Esta clase define el objeto Vacuna, que guarda el nombre, precio,
+ * frecuencia de pago y si la vacuna ya fue aplicada.
+ */
 
 #ifndef VACUNA_H_
 #define VACUNA_H_

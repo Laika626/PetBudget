@@ -1,12 +1,17 @@
 /*
-*
-•⁠  ⁠PetBudget
-•⁠  ⁠Fernanda Jiménez Estrada
-•⁠  ⁠A01206671
-•⁠  ⁠09/06/2026
-•⁠  ⁠Esta clase define el objeto Presupuesto que gestiona todas las mascotas
-•⁠  ⁠y calcula el total mensual usando polimorfismo.
-*/
+ * Proyecto PetBudget
+ * Fernanda Jiménez Estrada
+ * A01206671
+ * 09/06/2026
+ *
+ * Archivo: presupuesto.h
+ *
+ * Esta clase define el objeto Presupuesto, que se encarga de guardar
+ * las mascotas registradas y calcular el total mensual estimado.
+ *
+ * La clase usa polimorfismo porque guarda apuntadores de tipo Mascota
+ * y puede trabajar con objetos de tipo Perro o Gato.
+ */
 
 #ifndef PRESUPUESTO_H_
 #define PRESUPUESTO_H_
